@@ -1,0 +1,223 @@
+.footer {
+    flex: 1;
+    background-color: #181818; 
+    color: #e0e0e0; 
+    padding-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid rgb(68 68 68);
+    margin-top: 40px;
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-section {
+    margin-bottom: 10px;
+}
+
+.footer-section.terms a {
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+.footer-section h3 {
+    color: #a0a0a0;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+.footer-section.subscribe p {
+    margin-bottom: 10px;
+}
+
+.subscribe-form {
+    display: flex;
+}
+
+.subscribe-form [type="email"] {
+    background-color: #282828; 
+    color: #e0e0e0;
+    border: 1px solid #505050;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.subscribe-form input[type="email"]::placeholder {
+    color: #808080;
+}
+
+.subscribe-form button {
+    background-color: #1c4b79; 
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 55px 55px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+}
+
+.footer-bottom p {
+    color: #b2adf8;
+}
+
+.heart {
+    color: #e74c3c;
+}
+
+.github-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Общее зеленое свечение */
+.glow-green {
+    color: #7bf39f;
+    text-shadow: 1px 1px 30px rgba(255, 255, 255, 0.9);
+}
+
+/* Иконки со свечением */
+.icon-glow {
+    width: 25px;
+    height: auto;
+    color: #7bf39f;
+    text-shadow: 1px 1px 30px rgba(255, 255, 255, 0.9);
+}
+
+/* Обёртка для блока Terms */
+.terms-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Заголовок секций (Products, Company...) */
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #646363;
+    margin-bottom: 10px;
+}
+
+/* Примечание под подпиской */
+.subscribe-note {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #a7a4a4;
+}
+
+/* Кнопка GitHub */
+.github-button {
+    color: white !important;
+    background-color: rgb(32, 32, 32) !important;
+}
+
+.git {
+    margin-left: 10px;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 2px;
+}
+
+/* -------------------- HOVER EFFECTS -------------------- */
+/* Ховер-эффекты только для пунктов списков */
+.footer-section ul li a:hover {
+    color: #7bf39f;
+    text-shadow: 0 0 10px #7bf39f;
+    transition: all 0.3s ease;
+}
+
+/* Иконки при наведении */
+.icon-glow:hover {
+    color: #a0ffc4;
+    /* transform: scale(1.1); */
+    text-shadow: 0 0 15px #a0ffc4;
+    transition: all 0.3s ease;
+}
+
+/* Кнопка подписки при наведении */
+.subscribe-form button:hover {
+    background-color: #257ed1;
+}
+
+/* GitHub кнопка при наведении */
+.github-button:hover {
+    background-color: #4d4d4d !important;
+    border: 1px solid #7bf39f;
+    box-shadow: 0 0 10px rgba(123, 243, 159, 0.6);
+    /* transform: translateY(-2px); */
+    transition: all 0.3s ease;
+}
+
+/* Иконка GitHub при наведении */
+.github-button:hover .git {
+    border-color: #7bf39f;
+    box-shadow: 0 0 10px #7bf39f;
+    transition: all 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+    .footer-top {
+        justify-content: space-around;
+    }
+
+    .footer-section {
+        width: 45%;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .footer-section.terms {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .footer-section.subscribe {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .footer-section.subscribe {
+        text-align: left;
+    }
+}

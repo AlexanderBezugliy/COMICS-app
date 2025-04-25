@@ -1,0 +1,109 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* min-height: 850px; */
+    min-height: 90vh;
+}
+
+.home-header {
+    text-align: center;
+    margin-bottom: 30px;
+    animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 55px;
+    font-weight: bold;
+    color: #a30f40; 
+    margin: 30px 0px 10px 0px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9); 
+}
+
+.home-description {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: bold;
+    color: #7158ff;
+    font-size: 25px;
+    background: linear-gradient(to right, #fae6e6, #f06595, #ab83ff, #311bb1, #0d024b); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    background-clip: text;
+}
+
+.home-content {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 0px;
+}
+
+.home-text {
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 4px 4px 8px rgba(109, 1, 1, 0.9);
+}
+
+.home-description-text {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    width: 1100px;
+    color: #7bf39f;
+    text-shadow: 1px 1px 30px rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+    border: 2px solid #767679; 
+    padding: 25px;
+    border-radius: 30px; 
+    margin-bottom: 20px;
+}
+
+.home-description-text span {
+    display: flex;
+    justify-content: end;
+    font-weight: bold;
+    color: #ffab40; 
+    text-shadow: 4px 4px 8px rgba(109, 1, 1, 0.9);
+    margin-top: 15px;
+}
+
+.home-image {
+    position: absolute;
+    top: 14px;
+    right: -170px;
+    max-width: 400px;
+    height: auto;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.home-image:hover {
+    display: block;
+    transform: scale(1.08); 
+    cursor: pointer; 
+}
+
+.home-content p.home-description {
+    font-size: 1em;
+    line-height: 1.7;
+}
+
+.home-content p.home-description i {
+    color: #ffab40; 
+    font-weight: bold;
+    text-shadow: 4px 4px 8px rgba(109, 1, 1, 0.9);
+}
+  

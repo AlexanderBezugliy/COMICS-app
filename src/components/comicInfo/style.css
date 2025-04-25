@@ -1,0 +1,56 @@
+.comic-card {
+    display: flex;
+    color: white;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.comic-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.comic-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #00bfff;
+}
+
+.comic-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #12121a;
+    border-radius: 20px;
+}
+
+.comic-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    padding: 20px;
+}
+
+.information-link {
+    display: flex;
+    gap: 10px;
+}
+
+.product-title-cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    text-shadow:
+        0 0 5px #00bfff, /* Слабое голубое свечение */
+        0 0 10px #00bfff, /* Среднее голубое свечение */
+        0 0 20px #00bfff, /* Сильное голубое свечение */
+        0 0 40px #00bfff; /* Очень сильное голубое свечение */
+}

@@ -1,0 +1,115 @@
+.search-form {
+    background-color: #1e1e1e; /* Темный фон */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #333; 
+    width: 400px;
+    margin-top: 30px;
+}
+
+.search-icon {
+    background-color: #8e2de2; /* Фиолетовый цвет иконки */
+    color: #fff;
+    border-radius: 6px;
+    padding: 6px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-input {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    padding: 8px;
+    /* flex-grow: 1; Занимает оставшееся пространство */
+}
+
+.search-input::placeholder {
+    font-size: 14px;
+    font-weight: inherit;
+    color: rgb(207, 206, 206); /* Цвет плейсхолдера */
+}
+
+.search-input:focus {
+    outline: none; /* Убираем стандартное обводку при фокусе */
+}
+
+.products-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); /* Адаптивное количество столбцов */
+    gap: 26px; /* Задайте желаемый отступ между карточками */
+    margin-top: 20px;
+}
+
+.products-wrapper > div {
+    display: flex;
+    flex-direction: column; /* Чтобы содержимое карточки располагалось вертикально */
+    height: 100%; /* Растягивает контейнер div на всю высоту ячейки Grid */
+}
+
+.products-wrapper > div > .MuiCard-root {
+    height: 100%; /* Растягивает карточку на всю высоту контейнера div */
+}
+
+.product-title {
+    margin: 0 auto;
+    color: white;
+    font-size: 16px;
+    text-shadow:
+        0 0 5px #00bfff, /* Слабое голубое свечение */
+        0 0 10px #00bfff, /* Среднее голубое свечение */
+        0 0 20px #00bfff, /* Сильное голубое свечение */
+        0 0 40px #00bfff; /* Очень сильное голубое свечение */
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.pagination {
+    background-color: rgb(32, 32, 32);
+    background-image: url('../../assets/AbstractDesign.svg');
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center;
+    padding: 10px 14px;
+    border-radius: 29px;
+    border: .5px solid #333;
+    color: white;
+}
+
+.pagination .MuiPaginationItem-root {
+    color: white; 
+}
+
+.pagination .MuiPaginationItem-root:hover {
+    color: #41d0ff;
+    background-color: #1976d2;
+}
+
+.heart-icon {
+    transition: transform 0.3s ease;
+}
+
+.heart-icon.clicked {
+    animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

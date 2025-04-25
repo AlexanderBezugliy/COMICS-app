@@ -1,0 +1,155 @@
+.card-collection-container {
+    margin-top: 50px;
+}
+
+.collection-header {
+    text-align: center;
+    margin-bottom: 20px
+}
+
+.collection-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #00bfff;
+}
+
+.collection-description {
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.card-item {
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 16px;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 191, 255, 0.05);
+}
+
+.card-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 191, 255, 0.2);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease;
+}
+
+.card-img:hover {
+    transform: scale(1.03);
+}
+
+.g-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #00bfff;
+}
+
+.card-price {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #ccc;
+}
+
+.card-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.qty-btn {
+    border: 1px solid #00bfff;
+    color: #00bfff;
+    background-color: transparent;
+    border-radius: 6px;
+    padding: 2px 10px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.qty-btn:hover {
+    background-color: #00bfff;
+    color: #1f1f1f;
+    transform: scale(1.1);
+}
+
+.qty {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.remove-btn {
+    border: 1px solid #ff4d4d;
+    color: #ff4d4d;
+    border-radius: 6px;
+    padding: 4px 12px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #ff4d4d;
+    color: white;
+    transform: scale(1.05);
+}
+
+.empty-cart {
+    display: flex;
+    justify-content: center;
+}
+
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.image-wrapper img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; 
+    font-size: 18px;
+}
+
+.image-wrapper:hover .hover-text {
+    opacity: 1;
+}

@@ -1,0 +1,272 @@
+/* LOGIN */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+
+    background: url("/public/assets/flock-2031140.svg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: auto; 
+  }
+  
+  .login-wrapper {
+    width: 420px;
+    max-width: 90%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .login-wrapper h1 {
+    font-size: 24px;
+    text-align: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .login-wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    box-sizing: border-box;
+  }
+  
+  .input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease; /* Добавляем плавный переход для цвета границы */
+  }
+  
+  .input-box input::placeholder {
+    color: #fff;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .input-box .icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+  }
+  
+  .login-wrapper .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin: -15px 0 15px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .remember-forgot label {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .remember-forgot label input {
+    accent-color: blue;
+    margin-right: 4px;
+  }
+  
+  .remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Добавляем плавный переход для цвета ссылки */
+  }
+  
+  .remember-forgot a:hover {
+    text-decoration: underline;
+    color: lightskyblue; /* Легкий синий при наведении */
+  }
+  
+  .login-wrapper button {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease; /* Добавляем плавный переход для цвета фона */
+  }
+  
+  .login-wrapper button:hover {
+    background-color: lightskyblue; /* Легкий синий при наведении */
+    color: #fff; /* Белый текст при наведении */
+  }
+  
+  .login-wrapper .register-link {
+    font-size: 15px;
+    text-align: center;
+    margin: 20px 0 15px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .register-link p {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease; /* Добавляем плавный переход для цвета ссылки */
+  }
+  
+  .register-link p a:hover {
+    text-decoration: underline;
+    color: lightskyblue; /* Легкий синий при наведении */
+  }
+  
+  /* Стиль при фокусе на поля ввода */
+  .input-box input:focus {
+    border-color: lightskyblue; /* Легкий синий цвет границы при фокусе */
+    box-shadow: 0 0 5px lightskyblue; /* Небольшая тень при фокусе для выделения */
+  }
+  
+  
+  
+  /* REGISTRATION */
+  .register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background: url("/public/assets/flock-2031140.svg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: auto;
+  }
+  
+  .register-wrapper {
+    width: 420px;
+    max-width: 90%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .register-wrapper h1 {
+    font-size: 24px;
+    text-align: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .register-wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    box-sizing: border-box;
+  }
+  
+  .input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    font-size: 16px;
+    padding: 20px 45px 20px 20px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease; /* Плавный переход для цвета границы */
+    color: #fff; /* Добавлен цвет текста */
+  }
+  
+  .input-box input::placeholder {
+    color: white;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .register-wrapper .register-agreement {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin: -15px 0 15px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .register-agreement label {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    color: #fff; /* Добавлен цвет текста для label */
+  }
+  
+  .register-agreement label input {
+    accent-color: lightskyblue; /* Более светлый синий для чекбокса */
+    margin-right: 4px;
+  }
+  
+  .register-agreement b {
+    cursor: pointer;
+    color: lightskyblue; /* Светло-синий цвет для Terms и Privacy Policy */
+    transition: color 0.3s ease; /* Плавный переход для цвета ссылки */
+  }
+  
+  .register-agreement b:hover {
+    color: skyblue; /* Еще более светлый синий при наведении */
+    text-decoration: underline; /* Можно добавить подчеркивание при наведении */
+  }
+  
+  .register-wrapper button {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Плавный переход для фона и текста */
+  }
+  
+  .register-wrapper button:hover {
+    background-color: lightskyblue; /* Легкий синий при наведении */
+    color: #fff; /* Белый текст при наведении */
+  }
+  
+  /* Стиль при фокусе на поля ввода */
+  .input-box input:focus {
+    border-color: lightskyblue; /* Легкий синий цвет границы при фокусе */
+    box-shadow: 0 0 5px lightskyblue; /* Небольшая тень при фокусе для выделения */
+  }

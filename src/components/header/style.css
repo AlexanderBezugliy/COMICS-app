@@ -1,0 +1,60 @@
+.container-xl {
+    background-image: url('../../assets/AbstractDesign.svg');
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center;
+    border-bottom: 1px solid rgb(68 68 68);
+}
+
+.wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.wrapper h3 {
+    font-family: ;
+    font-weight: bold;
+    font-size: 45px;
+}
+
+.logo-marvel {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.logo-marvel img {
+    width: 120px;
+    height: auto;
+}
+
+.navigation {
+    display: flex;
+    gap: 50px;
+    padding: 8px 40px;
+    border-radius: 30px;
+    border: 1px solid rgb(68 68 68);
+    background-color: rgb(32, 32, 32);
+}
+
+.navigation-item {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.log {
+    display: flex;
+    gap: 10px;
+}
+
+.log p {
+    margin-left: 8px;
+}
+
+.git {
+    width: auto;
+    height: 23px;
+}
