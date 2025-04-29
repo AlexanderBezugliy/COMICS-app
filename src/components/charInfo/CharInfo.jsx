@@ -1,12 +1,12 @@
 import React from 'react'
-import './../comicInfo/style.css';
 import { Box, Button, Modal } from '@mui/material';
 import { FaPlus } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { addToFavorite } from '../../redux/favoriteSlice';
+import './../comicInfo/style.css';
 
 
-const CharInfo = ({ open, handleClose, char, toggleLike }) => {
+const CharInfo = ({ open, handleClose, char, toggleLike, isLiked }) => {
     const dispatch = useDispatch();
 
     if (!char) return null;
@@ -57,15 +57,19 @@ const CharInfo = ({ open, handleClose, char, toggleLike }) => {
                     </ul>
 
                     <Button
-                        onClick={(e) => {
-                            e.stopPropagation();
+                        onClick={() => {
                             dispatch(addToFavorite(char));
                             toggleLike(char.id);
                         }}
                         variant="outlined"
-                        style={{ borderRadius: '10px', color: '#00bfff', height: '40px', width: '40px' }}
+                        style={{     
+                            backgroundColor: isLiked(char.id) ? '#00bfff' : 'transparent',
+                            borderRadius: '10px',
+                            height: '40px', 
+                            width: '40px' 
+                        }}
                     >
-                        <FaPlus />
+                        <FaPlus style={{ color: 'white' }} />
                     </Button>
                 </div>
 

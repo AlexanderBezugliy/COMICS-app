@@ -18,6 +18,7 @@ export const fetchProducts = createAsyncThunk(
 
 const initialState = {
     products: [],
+    searchRequest: '',
 
     loading: false,
     error: null
@@ -26,7 +27,11 @@ const initialState = {
 const productsSlice = createSlice({
     name: 'products',
     initialState,
-    reducers: {},
+    reducers: {
+        setSearchComicsRequest: (state, action) => {
+            state.searchRequest = action.payload;
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchProducts.pending, (state) => {
@@ -42,25 +47,9 @@ const productsSlice = createSlice({
                 state.loading = false;
                 state.error = action.error.message;
             })
-            // ========== один комікс ==========
-            // .addCase(fetchComicById.pending, (state) => {
-            //     state.loading = true;
-            //     state.error = null;
-            //     state.selectedComic = null;
-            // })
-
-            // .addCase(fetchComicById.fulfilled, (state, action) => {
-            //     state.selectedComic = action.payload;
-            //     state.loading = false;
-            // })
-
-            // .addCase(fetchComicById.rejected, (state) => {
-            //     state.loading = false;
-            //     state.error = 'Error loading comic...';
-            // });
     }
 });
 
-// export const { toggleCart } = productsSlice.actions;
+export const { setSearchComicsRequest } = productsSlice.actions;
 
 export default productsSlice.reducer;

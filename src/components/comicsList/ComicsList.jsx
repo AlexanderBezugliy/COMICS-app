@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { FaRegHeart, FaSearch } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts } from '../../redux/productsSlice';
+import { fetchProducts, setSearchComicsRequest } from '../../redux/productsSlice';
 import { Button, Card, CardContent, CardMedia, Pagination } from '@mui/material';
 import SaleBadge from '../saleBadge/SaleBadge';
 import ComicInfo from '../comicInfo/ComicInfo';
 import { addToFavorite } from '../../redux/favoriteSlice';
 import { Triangle } from "react-loader-spinner";
 import './style.css';
+import Search from '../search/Search';
 
 
 const ComicsList = () => {
@@ -17,15 +18,20 @@ const ComicsList = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 8;
 
-    const [likedChomic, setLikedComic] = useState(false);
+    const [_, setLikedComic] = useState(false);
     const [clickedHeart, setClickedHeart] = useState(null);
 
-    const { products, loading, error } = useSelector((state) => state.products);
     const dispatch = useDispatch();
+    const { products, searchRequest, loading, error } = useSelector((state) => state.products);
+    const { favoriteItems } = useSelector((state) => state.favorite);
 
     useEffect(() => {
         dispatch(fetchProducts())
     }, [dispatch]);
+
+    useEffect(() => {//сброс страницы на первую при смене фильтра,поиска или сортировки
+        setCurrentPage(1);
+    }, [searchRequest]);
 
     // useEffect(() => {
     //     console.log(products);
@@ -41,6 +47,10 @@ const ComicsList = () => {
         setSelectedComic(null);
     };
 
+    const isLiked = (id) => {
+        return favoriteItems.some(item => item.id === id);
+    };
+
     const toggleLike = (id) => {
         setLikedComic((prev) => ({
             ...prev,
@@ -51,11 +61,13 @@ const ComicsList = () => {
         setTimeout(() => setClickedHeart(null), 400);
     };
 
+    const filteredProducts = products.filter((product) => product.title.toLowerCase().includes(searchRequest.toLowerCase()));
+
     //пагинация
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentProducts = products.slice(indexOfFirstItem, indexOfLastItem);
-    const totalPages = Math.ceil(products.length / itemsPerPage);
+    const currentProducts = filteredProducts.slice(indexOfFirstItem, indexOfLastItem);
+    const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
 
     if (loading) {
         return (
@@ -69,17 +81,12 @@ const ComicsList = () => {
             </div>
         );
     };
-    
+
     if (error) return <p style={{ color: 'red' }}>Error: {error}</p>;
 
     return (
         <div className='container'>
-            <div className="search-form">
-                <div className="search-icon">
-                    <FaSearch style={{ color: 'white' }} />
-                </div>
-                <input type="text" className="search-input" placeholder="Search..." />
-            </div>
+            <Search />
 
             <div className='products-wrapper'>
                 {currentProducts.map((product) => (
@@ -132,8 +139,7 @@ const ComicsList = () => {
                                         variant="outlined"
                                         style={{
                                             color: '#00bfff',
-                                            backgroundColor: likedChomic[product.id] ? '#00bfff' : 'transparent',
-                                            borderRadius: '50%',
+                                            backgroundColor: isLiked(product.id) ? '#00bfff' : 'transparent', borderRadius: '50%',
                                             padding: '6px',
                                             cursor: 'pointer',
                                             display: 'flex',
@@ -144,7 +150,7 @@ const ComicsList = () => {
                                         <FaRegHeart
                                             className={`heart-icon ${clickedHeart === product.id ? 'clicked' : ''}`}
                                             style={{
-                                                color: likedChomic[product.id] ? 'white' : '#00bfff',
+                                                color: isLiked(product.id) ? 'white' : '#00bfff',
                                                 width: '24px',
                                                 height: '24px'
                                             }}
@@ -172,6 +178,8 @@ const ComicsList = () => {
                 open={open}
                 handleClose={handleClose}
                 comic={selectedComic}
+                toggleLike={toggleLike}
+                isLiked={isLiked}
             />
         </div>
     )

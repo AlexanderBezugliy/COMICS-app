@@ -2,9 +2,13 @@ import React from 'react'
 import './style.css';
 import { Box, Button, Modal } from '@mui/material';
 import { FaPlus } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
+import { addToFavorite } from '../../redux/favoriteSlice';
 
 
-const ComicInfo = ({ open, handleClose, comic }) => {
+const ComicInfo = ({ open, handleClose, comic, toggleLike, isLiked }) => {
+    const dispatch = useDispatch();
+
     if (!comic) return null;
 
     return (
@@ -49,12 +53,17 @@ const ComicInfo = ({ open, handleClose, comic }) => {
                     </p>
 
                     <Button
-                        // onClick={(e) => {
-                        //     e.stopPropagation();
-                        //     dispatch(addToCart(product))
-                        // }}
+                        onClick={() => {
+                            dispatch(addToFavorite(comic));
+                            toggleLike(comic.id);
+                        }}
                         variant="outlined"
-                        style={{ borderRadius: '10px', color: '#00bfff', height: '40px', width: '40px' }}
+                        style={{ 
+                            backgroundColor: isLiked(comic.id) ? '#00bfff' : 'transparent',
+                            borderRadius: '10px', 
+                            height: '40px', 
+                            width: '40px' 
+                        }}
                     >
                         <FaPlus />
                     </Button>

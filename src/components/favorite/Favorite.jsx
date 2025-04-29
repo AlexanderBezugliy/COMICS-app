@@ -52,6 +52,7 @@ import { Button } from '@mui/material';
 //         )
 //     )
 // }
+
 const Favorite = () => {
     const dispatch = useDispatch();
     const { favoriteItems } = useSelector((state) => state.favorite);
@@ -72,8 +73,11 @@ const Favorite = () => {
                                     alt={item.title || item.name}
                                     className="card-img"
                                 />
+
                                 <div className="card-content">
-                                    <h5 className="card-title">{item.title || item.name}</h5>
+                                    <div>
+                                        <h5 className="card-title">{item.title || item.name}</h5>
+                                    </div>
 
                                     <Button
                                         onClick={() => dispatch(removeFromFavorite(item.id))}
