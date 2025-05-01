@@ -35,6 +35,14 @@ const ComicInfo = ({ open, handleClose, comic, toggleLike, isLiked }) => {
             >
                 <div className="comic-info">
                     <h2 style={{ marginBottom: '0px' }}>{comic.title}</h2>
+                    <div className='information-link'>
+                        <a href={comic.urls[0]?.url} alt='homepage-link'>
+                            <Button variant="outlined" style={{ borderRadius: '15px', color: '#00bfff' }}>Homepage</Button>
+                        </a>
+                        <a href={comic.urls[0]?.url} alt='homepage-wiki'>
+                            <Button variant="outlined" style={{ borderRadius: '15px', color: '#00bfff' }}>Wiki</Button>
+                        </a>
+                    </div>
                     <div>
                         <h2 style={{ marginBottom: '0px' }}>Description: </h2>
                         {comic.description || "There is no description..."}
@@ -58,11 +66,11 @@ const ComicInfo = ({ open, handleClose, comic, toggleLike, isLiked }) => {
                             toggleLike(comic.id);
                         }}
                         variant="outlined"
-                        style={{ 
+                        style={{
                             backgroundColor: isLiked(comic.id) ? '#00bfff' : 'transparent',
-                            borderRadius: '10px', 
-                            height: '40px', 
-                            width: '40px' 
+                            borderRadius: '10px',
+                            height: '40px',
+                            width: '40px'
                         }}
                     >
                         <FaPlus />

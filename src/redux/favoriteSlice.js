@@ -15,7 +15,7 @@ const favoriteSlice = createSlice({
     initialState,
     reducers: {
         addToFavorite: (state, action) => {
-            const existingCharacter = state.favoriteItems.find(i => i.id === action.payload.id);
+            const existingCharacter = state.favoriteItems.find((item) => item.id === action.payload.id);
 
             if (!existingCharacter) {
                 state.favoriteItems.push(action.payload);
@@ -23,27 +23,11 @@ const favoriteSlice = createSlice({
         },
 
         removeFromFavorite: (state, action) => {
-            state.favoriteItems = state.favoriteItems.filter(i => i.id !== action.payload);
-        },
-
-        incQty: (state, action) => {
-            const existingCharacter = state.favoriteItems.find(i => i.id === action.payload.id);
-
-            if (existingCharacter) {
-                existingCharacter.quantity += 1;
-            }
-        },
-
-        decQty: (state, action) => {
-            const existingCharacter = state.favoriteItems.find(i => i.id === action.payload);
-
-            if (existingCharacter && existingCharacter.quantity > 1) {
-                existingCharacter.quantity -= 1
-            };
+            state.favoriteItems = state.favoriteItems.filter((item) => item.id !== action.payload);
         },
     },
 });
 
-export const { addToFavorite, removeFromFavorite, incQty, decQty } = favoriteSlice.actions;
+export const { addToFavorite, removeFromFavorite } = favoriteSlice.actions;
 
 export default favoriteSlice.reducer;

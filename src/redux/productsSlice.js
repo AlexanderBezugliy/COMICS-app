@@ -16,8 +16,20 @@ export const fetchProducts = createAsyncThunk(
     }
 );
 
+//получение перс.
+export const fetchCharacters = createAsyncThunk(
+    'character/fetchCharacters',
+    async () => {
+        const response = await fetch(`${API_BASE}characters?limit=100&${API_KEY}`);
+        const data = await response.json();
+
+        return data.data.results;
+    }
+);
+
 const initialState = {
-    products: [],
+    comics: [],
+    characters: [],
     searchRequest: '',
 
     loading: false,
@@ -28,28 +40,40 @@ const productsSlice = createSlice({
     name: 'products',
     initialState,
     reducers: {
-        setSearchComicsRequest: (state, action) => {
+        setSearchRequest: (state, action) => {
             state.searchRequest = action.payload;
         },
     },
     extraReducers: (builder) => {
         builder
+            //получение комиксов
             .addCase(fetchProducts.pending, (state) => {
                 state.loading = true;
             })
-
             .addCase(fetchProducts.fulfilled, (state, action) => {
                 state.loading = false;
-                state.products = action.payload;
+                state.comics = action.payload;
+            })
+            .addCase(fetchProducts.rejected, (state) => {
+                state.loading = false;
+                state.error = 'Comics loading error...';
             })
 
-            .addCase(fetchProducts.rejected, (state, action) => {
+            //получение персонажей
+            .addCase(fetchCharacters.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(fetchCharacters.fulfilled, (state, action) => {
                 state.loading = false;
-                state.error = action.error.message;
+                state.characters = action.payload;
+            })
+            .addCase(fetchCharacters.rejected, (state) => {
+                state.loading = false;
+                state.error = 'Character loading error...';
             })
     }
 });
 
-export const { setSearchComicsRequest } = productsSlice.actions;
+export const { setSearchRequest } = productsSlice.actions;
 
 export default productsSlice.reducer;
